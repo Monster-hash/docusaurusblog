@@ -29,6 +29,7 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
           server: ftp://monster-hash.com/www/wwwroot/www.monster-hash.cn
+          server_port: '22'
           username: ${{ secrets.ftp_user }}
           password: ${{ secrets.ftp_pwd }}
           local-dir: ./build/
