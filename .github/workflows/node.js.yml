@@ -32,7 +32,7 @@ jobs:
           remote_path: /www/wwwroot/www.monster-hash.cn/my-website/build/
           remote_host: monster-hash.cn
           remote_port: 22
-          remote_user: test1
+          remote_user: root
           remote_key: ${{ secrets.DEPLOY_KEY }}
         env:
           CI: true
