@@ -24,10 +24,10 @@ jobs:
       - run: npm install
       - run: npm run build --if-present
 
-      - name: FTP Deploy
+      - name: FTP-Deploy-Action
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
-          server: monster-hash.cn/www/wwwroot/www.monster-hash.cn/my-website/build
+          server: ftp.monster-hash.cn/www/wwwroot/www.monster-hash.cn/my-website/build
           username: ${{ secrets.ftp_user }}
           password: ${{ secrets.ftp_pwd }}
           
