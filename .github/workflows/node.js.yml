@@ -25,14 +25,14 @@ jobs:
       - run: npm run build --if-present
 
       - name: rsync deployments
-      uses: burnett01/rsync-deployments@3.0
-      with:
-        switches: -avzr --delete
-        path: build/
-        remote_path: /www/wwwroot/www.monster-hash.cn/my-website/build/
-        remote_host: monster-hash.cn
-        remote_port: 22
-        remote_user: test1
-        remote_key: ${{ secrets.DEPLOY_KEY }}
+        uses: burnett01/rsync-deployments@3.0
+        with:
+          switches: -avzr --delete
+          path: build/
+          remote_path: /www/wwwroot/www.monster-hash.cn/my-website/build/
+          remote_host: monster-hash.cn
+          remote_port: 22
+          remote_user: test1
+          remote_key: ${{ secrets.DEPLOY_KEY }}
         env:
           CI: true
