@@ -32,6 +32,7 @@ jobs:
           password: ${{ secrets.ftp_pwd }}
           
           local-dir: ./build/
+          server-dir: www/wwwroot/www.monster-hash.cn/my-website/build/
           
         env:
           CI: true
