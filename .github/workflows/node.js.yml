@@ -30,7 +30,8 @@ jobs:
           server: ftp.monster-hash.cn
           username: ${{ secrets.ftp_user }}
           password: ${{ secrets.ftp_pwd }}
-          
+          protocol: ftp
+          port: 21
           local-dir: ./build/
           server-dir: www/wwwroot/www.monster-hash.cn/my-website/build/
           
