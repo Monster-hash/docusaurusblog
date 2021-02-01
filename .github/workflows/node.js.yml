@@ -30,6 +30,7 @@ jobs:
           server: ftp://monster-hash.cn/www/wwwroot/www.monster-hash.cn/my-website/build
           username: ${{ secrets.ftp_user }}
           password: ${{ secrets.ftp_pwd }}
+          git-ftp-args: --insecure
           local-dir: ./build/
           
         env:
