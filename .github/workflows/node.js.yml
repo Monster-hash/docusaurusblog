@@ -27,7 +27,7 @@ jobs:
       - name: FTP-Deploy-Action
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
-          server: 39.102.39.0
+          server: monster-hash.cn
           port: 21
           username: ${{ secrets.ftp_user }}
           password: ${{ secrets.ftp_pwd }}
