@@ -1,0 +1,204 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif; /*规定元素的字体系列 */
+} 
+.wave{
+    position: fixed; /*position: fixed 生成绝对定位的元素，相对于浏览器窗口进行定位*/
+    height: 100%;
+    bottom: 0;
+    z-index: -1; /*z-index空间层叠等级*/
+}
+.container{
+    width: 100vw;  /* 宽度的100% */
+    height: 100vh; /* 高度的100% */
+    display: grid; /* display 属性规定元素应该生成的框的类型 ,grid将网页划分成一个个网格，可以任意组合不同的网格，做出各种各样的布局*/
+    grid-template-columns: repeat(2,1fr);/* 共有两列，每列列宽1fr = (网格宽度)/2 */
+    /* grid-template-columns属性是基于 网格列 的维度,去定义网格线的名称和网格轨道的尺寸大小 */
+    /* repeat() 第一个参数是重复的次数 */
+    /*repeat(2,1fr)*/
+    grid-gap: 18rem;
+    /* grid-gap属性定义网格布局中行和列之间间隙的大小,是grid-row-gap和grid-column-gap的简写 */
+    /* rem:是一个相对单位，1rem等于根元素的font-size值 */
+    /* 浏览器默认的字号16px ,例：48px , 48/16 = 3rem */
+    padding: 0 2rem;/* padding设置所有内边距属性,上内边距是0,左右内边距2rem*/
+}
+.img{
+    display: flex;
+    justify-content: flex-end; /*flex-end 位于容器的结尾*/
+    /*justify-content 用于设置或检索弹性盒子元素在主轴(横轴)方向上的对齐方式*/
+    align-items: center;
+    /*align-items 属性定义flex子项在flex容器的当前行的侧轴(纵轴)方向上的对齐方式*/
+}
+.img img{
+    width: 500px;
+}
+.login-box{
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+form{
+    width: 360px;
+}
+.avatar{
+    width: 100px;
+}
+form h2{
+    font-size: 2.9rem;/* 字体大小 */
+    text-transform: uppercase; /* 设置英文字母为大写*/
+    margin: 15px 0; /* 外边距*/
+    color: #999;
+}
+
+.input-group{
+    position: relative;
+    display: grid;
+    grid-template-columns: 7% 93%;
+    margin: 25px 0;
+    padding: 5px 0;
+    border-bottom: 2px solid #d9d9d9;
+}
+.input-group:nth-child(1){ /* 规定属于其父元素的第1个元素的下外边距都是4px */
+    margin-bottom: 4px;
+}
+
+.input-group:before,.input-group:after{
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: #38d39f;
+    transition: .5s;
+}
+.input-group:after{
+    right: 50%;
+}
+.input-group:before{
+    left: 50%;
+}
+.icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon i{
+    color: #d9d9d9;
+    transition: .5s;
+}
+.input-group > div{
+    position: relative;
+    height: 45px;
+}
+
+.input-group >div > h5{
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%); /* 通过给定Y方向的数目指定一个translation。只向Y轴进行移动，基点在元素心点，可以通过transform-origin改变基点位置 */
+    color: #d9d9d9;
+    font-size: 18px;
+    transition: .3s;
+}
+.input-group.focus .icon i{
+    color: #38d39f;
+}
+.input-group.focus div h5{
+    top: -5px;
+    font-size: 15px;
+}
+.input-group.focus:after,.input-group.focus:before{
+    width: 50%;
+}
+.input{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border: none;
+    outline: none;
+    background: none;
+    padding: 0.5rem 0.7rem;
+    font-size: 1.2rem;
+    color: #555;
+    font-family: sans-serif;
+}
+a{
+    display: block;
+    text-align: right;
+    text-decoration: none;
+    color: #999;
+    font-size: 0.9rem;
+    transition: .3s;
+}
+a:hover{
+    color: #38d39f;
+}
+.btn{
+    display: block;
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    margin: 1rem 0;
+    font-size: 1.2rem;
+    outline: none;
+    border: none;
+    background-image: linear-gradient(to right,#32be8f,#38d39f,#32be8f);
+    cursor: pointer;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    background-size: 200%;
+    transition: .5s;
+}
+.btn:hover{
+    background-position: right;
+}
+.copyright{
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    bottom: 2px;
+    color: #38d39f;
+    text-align: center;
+    font-size: 18px;
+    font-family: sans-serif;
+}
+/* 当缩放时保持页面上始终有表单 */
+/*媒体查询*/
+@media screen and (max-width: 1080px) {
+    .container{
+        grid-gap: 9rem;
+    }
+}
+@media screen and (max-width: 1024px) {
+    form{
+        width: 290px;
+    }
+    form h2{
+        font-size: 2.4rem;
+        margin: 8px 0;
+    }
+    .img img{
+        width: 360px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .wave{
+        display: none;
+    }
+    .img{
+        display: none;
+    }
+    .container{
+        grid-template-columns: 1fr;
+    }
+    .login-box{
+        justify-content: center;
+    }
+}
