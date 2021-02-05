@@ -22,12 +22,12 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - run: npm install
-      - run: yarn build --if-present
+      - run: npm run build --if-present
 
       - name: FTP-Deploy-Action
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
-          server: www.monster-hash.cn
+          server: monster-hash.cn
           port: 21
           username: ${{ secrets.ftp_user }}
           password: ${{ secrets.ftp_pwd }}
