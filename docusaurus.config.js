@@ -3,8 +3,9 @@ module.exports = {
   tagline: 'only the god can judge me.',
   url: 'https://monster-hash.com',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  // onBrokenLinks: 'throw',
+  // onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: 'ignore',
   favicon: 'img/ghost.svg',
   organizationName: 'monster-hash', // Usually your GitHub org/user name.
   projectName: 'monster-hash.cn', // Usually your repo name.
